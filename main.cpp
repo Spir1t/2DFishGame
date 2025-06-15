@@ -4,42 +4,6 @@
 #include "fish.h"
 #include <iostream>
 
-/*
-void resize(int width, int height) {
-
-    // avoid div-by-zero
-    if (height == 0) {
-        height = 1;
-    }
-
-    // calculate the aspect ratio
-    float ratio = width * 1.0 / height;
-
-    // put opengl into projection matrix mode
-    glMatrixMode(GL_PROJECTION);
-
-    // reset the matrix
-    glLoadIdentity();
-    // set the viewport
-    glViewport(0, 0, width, height);
-    // set the perspective
-    gluPerspective(45.0f, ratio, 0.1f, 100.0f);
-
-    // put opengl back into modelview mode
-    glMatrixMode(GL_MODELVIEW);
-
-}
-void render(void) {
-
-    // just clear the buffers for now
-    glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
-
-    // flip the buffers
-    glutSwapBuffers();
-
-}
-*/
-
 GLfloat t = 0;
 GLfloat SunX = sin(t/100) * 1.7;
 GLfloat SunY = cos(t/100) * 1.2 - 0.4;
@@ -89,11 +53,9 @@ int main(int argc, char* argv[]) {
 
 void init(void)
 {
-    //установить цвет бэкграунда после очистки
     glClearColor(0, 210.0 / 255.0, 1.0, 0);
     glClear(GL_COLOR_BUFFER_BIT);
 
-    //какая-то матрица
     glMatrixMode(GL_PROJECTION);
     glLoadIdentity();
 }
@@ -190,7 +152,6 @@ void DrawMoon()
 
 void render(void) 
 {
-    //очистить
     glClear(GL_COLOR_BUFFER_BIT);
 
     GLfloat Colors[] = { 0, 0.65 * CurrentLight, 1 * CurrentLight,
